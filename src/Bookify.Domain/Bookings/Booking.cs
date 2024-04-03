@@ -1,5 +1,4 @@
-﻿using System.Security.AccessControl;
-using Bookify.Domain.Abstractions;
+﻿using Bookify.Domain.Abstractions;
 using Bookify.Domain.Apartments;
 using Bookify.Domain.Bookings.Events;
 using Bookify.Domain.Shared;
@@ -30,6 +29,10 @@ public sealed class Booking : Entity
         TotalPrice = totalPrice;
         Status = status;
         CreatedOnUtc = createdOnUtc;
+    }
+
+    private Booking()
+    {
     }
 
     public Guid ApartmentId { get; private set; }
