@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "ed3ff229-f22c-405d-93ff-405c36705a48",
+		"name": "Bookify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4241772"
+	},
+	"item": [
+		{
+			"name": "Apartments",
+			"item": [
+				{
+					"name": "Search Apartments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0Skw3R0NuTzAzS1I2MXU4RzQ1VkdldXpidnUtb1VwV1kxZ3lYSTNFd2ljIn0.eyJleHAiOjE3MTIzNzE3NDUsImlhdCI6MTcxMjM2ODE0NSwianRpIjoiZjkzNWNlNWUtZmE1YS00NGRiLWJhODEtNmUxMWE3MWUwMmUzIiwiaXNzIjoiaHR0cDovL2Jvb2tpZnktaWRwOjgwODAvcmVhbG1zL2Jvb2tpZnkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMDg4N2NkMjEtMzYxYi00M2IxLWI2MjctMzViYjk4YThlYTcwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYm9va2lmeS1hdXRoLWNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJmODRlZmZlNi1kZjliLTQ2Y2EtYWVkNC1lNWNkNDk2NGNhYzUiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtYm9va2lmeSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJmODRlZmZlNi1kZjliLTQ2Y2EtYWVkNC1lNWNkNDk2NGNhYzUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkRhbmlsbyBEYW50YXMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkYW5uZXZlc2RhbnRhc0BvdXRsb29rLmNvbSIsImdpdmVuX25hbWUiOiJEYW5pbG8iLCJmYW1pbHlfbmFtZSI6IkRhbnRhcyIsImVtYWlsIjoiZGFubmV2ZXNkYW50YXNAb3V0bG9vay5jb20ifQ.oB_skdmc_bl9DRwgbMG8_o5zs6I-1cS-q12TpyXtWc9moatia4MeTpsUV9UmZD39MtsG0p8KyB16z0CvndlHijsNUyESHEpimSZCzrlXWH3SCeevfXWGksSDU2h6vWH3X9RPA4igDEpYl9P2pHMNyBREw0TiAuXDfuZt4x93Rmq3Sw1sS82sV486bvtnwUj6yU5T0y3FRHmL24cspRJmsoDsPZxmom7R1NIUDb1SbVedg1q3mgw7P6oFvnw2sd00rcQB7TBM__N7e0D3xRTopQB3OMaX5DcjbRWS7NbG2opitlniTHdSIHeu8AF14AOL2LDN_PUVYZq0GzLFlZQdTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/apartments?startDate=07-20-2023&endDate=07-31-2023",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"apartments"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "07-20-2023"
+								},
+								{
+									"key": "endDate",
+									"value": "07-31-2023"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Reserve Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apartmentId\": \"\",\r\n    \"userId\": \"\",\r\n    \"startDate\": \"2023-08-01\",\r\n    \"endDate\": \"2023-08-10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/bookings",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Identity",
+			"item": [
+				{
+					"name": "Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "bookify-auth-client",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "3E3yvXaYppoYBF3Ir6DgtEzADKKzSurZ",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:18080/realms/bookify/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"realms",
+								"bookify",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Access Token Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "bookify-admin-client",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "UZDmbNxWmV4TlpaCRcju6pMRsyuV3er1",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:18080/realms/bookify/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"realms",
+								"bookify",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Log in User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dannevesdantas@outlook.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/users/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dannevesdantas@outlook.com\",\r\n    \"firstName\": \"Danilo\",\r\n    \"lastName\": \"Dantas\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/users/register",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
