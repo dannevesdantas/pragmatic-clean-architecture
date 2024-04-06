@@ -15,7 +15,7 @@ internal sealed class LogInUserCommandHandler : ICommandHandler<LogInUserCommand
     }
 
     public async Task<Result<AccessTokenResponse>> Handle(
-        LogInUserCommand request, 
+        LogInUserCommand request,
         CancellationToken cancellationToken)
     {
         var result = await _jwtService.GetAccessTokenAsync(

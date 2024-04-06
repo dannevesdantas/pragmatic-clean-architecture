@@ -53,13 +53,13 @@ public sealed class Booking : Entity
 
     public DateTime CreatedOnUtc { get; private set; }
 
-    public DateTime ConfirmedOnUtc { get; private set; }
+    public DateTime? ConfirmedOnUtc { get; private set; }
 
-    public DateTime RejectedOnUtc { get; private set; }
+    public DateTime? RejectedOnUtc { get; private set; }
 
-    public DateTime CompletedOnUtc { get; private set; }
+    public DateTime? CompletedOnUtc { get; private set; }
 
-    public DateTime CancelledOnUtc { get; private set; }
+    public DateTime? CancelledOnUtc { get; private set; }
 
     public static Booking Reserve(
         Apartment apartment,
@@ -112,7 +112,7 @@ public sealed class Booking : Entity
         }
 
         Status = BookingStatus.Rejected;
-        ConfirmedOnUtc = utcNow;
+        RejectedOnUtc = utcNow;
 
         RaiseDomainEvent(new BookingRejectedDomainEvent(Id));
 
@@ -126,8 +126,8 @@ public sealed class Booking : Entity
             return Result.Failure(BookingErrors.NotConfirmed);
         }
 
-        Status = BookingStatus.Rejected;
-        ConfirmedOnUtc = utcNow;
+        Status = BookingStatus.Completed;
+        CompletedOnUtc = utcNow;
 
         RaiseDomainEvent(new BookingCompletedDomainEvent(Id));
 
@@ -149,7 +149,7 @@ public sealed class Booking : Entity
         }
 
         Status = BookingStatus.Cancelled;
-        ConfirmedOnUtc = utcNow;
+        CancelledOnUtc = utcNow;
 
         RaiseDomainEvent(new BookingCancelledDomainEvent(Id));
 

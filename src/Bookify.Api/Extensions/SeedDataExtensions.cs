@@ -17,7 +17,7 @@ public static class SeedDataExtensions
         var faker = new Faker();
 
         List<object> apartments = new();
-        for (int i = 0; i < 100; i++)
+        for (var i = 0; i < 100; i++)
         {
             apartments.Add(new
             {

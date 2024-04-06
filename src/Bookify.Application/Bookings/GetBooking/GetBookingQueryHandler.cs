@@ -9,9 +9,9 @@ internal sealed class GetBookingQueryHandler : IQueryHandler<GetBookingQuery, Bo
 {
     private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-    public GetBookingQueryHandler(ISqlConnectionFactory _sqlConnectionFactory)
+    public GetBookingQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
     {
-        _sqlConnectionFactory = _sqlConnectionFactory;
+        _sqlConnectionFactory = sqlConnectionFactory;
     }
 
     public async Task<Result<BookingResponse>> Handle(GetBookingQuery request, CancellationToken cancellationToken)

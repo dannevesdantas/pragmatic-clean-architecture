@@ -13,8 +13,8 @@ internal sealed class BookingReservedDomainEventHandler : INotificationHandler<B
     private readonly IEmailService _emailService;
 
     public BookingReservedDomainEventHandler(
-        IBookingRepository bookingRepository, 
-        IUserRepository userRepository, 
+        IBookingRepository bookingRepository,
+        IUserRepository userRepository,
         IEmailService emailService)
     {
         _bookingRepository = bookingRepository;
